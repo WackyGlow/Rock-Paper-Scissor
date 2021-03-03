@@ -4,6 +4,7 @@ package rps.bll.game;
 import java.util.ArrayList;
 
 //Project imports
+import javafx.scene.control.Alert;
 import rps.bll.player.IPlayer;
 
 /**
@@ -52,8 +53,11 @@ public class GameManager {
 
         gameState.setRoundNumber(++roundNumber);
         gameState.getHistoricResults().add(result);
-        System.out.println(result.getWinnerPlayer().getPlayerName());
-        System.out.println(result.getType());
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Round over");
+        alert.setHeaderText("");
+        alert.setContentText(result.getWinnerPlayer().getPlayerName() + " - " + result.getType() + "s");
+        alert.showAndWait();
         return result;
     }
 
