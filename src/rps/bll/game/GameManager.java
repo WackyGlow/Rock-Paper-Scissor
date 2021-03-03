@@ -52,7 +52,8 @@ public class GameManager {
 
         gameState.setRoundNumber(++roundNumber);
         gameState.getHistoricResults().add(result);
-
+        System.out.println(result.getWinnerPlayer().getPlayerName());
+        System.out.println(result.getType());
         return result;
     }
 
