@@ -42,13 +42,19 @@ public class GameViewController implements Initializable {
 
     public void handleRockButton(ActionEvent actionEvent) {
         gameManager.playRound(Move.Rock);
+        Player.rocks ++;
+        Player.totalPlays ++;
     }
 
     public void handlePaperButton(ActionEvent actionEvent) {
         gameManager.playRound(Move.Paper);
+        Player.papers ++;
+        Player.totalPlays ++;
     }
 
     public void handleScissorsButton(ActionEvent actionEvent) {
         gameManager.playRound(Move.Scissor);
+        Player.scissors ++;
+        Player.totalPlays ++;
     }
 }
